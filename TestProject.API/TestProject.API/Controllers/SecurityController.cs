@@ -88,9 +88,6 @@ public class SecurityController(ISecurityService securityService) : ControllerBa
     [Produces("application/json")]
     public async Task<IActionResult> GetUserDataAsync([FromHeader] string token)
     {
-        if (!ModelState.IsValid)
-            return Respondent.Error(ModelState);
-
         var response = await securityService.GetUserDataAsync(token);
         return !response.Result.Error ? StatusCode(response.Result.Code, response) : Ok(response);
     }
