@@ -54,7 +54,7 @@ public class SecurityController(ISecurityService securityService) : ControllerBa
     }
 
     /// <summary>
-    /// Authenticates a user and generates a session token.
+    /// Authenticates a user.
     /// </summary>
     /// <param name="token">Session token.</param>
     /// <param name="request">Login details of the user.</param>
