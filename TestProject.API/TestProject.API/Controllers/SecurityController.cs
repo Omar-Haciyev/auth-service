@@ -84,7 +84,7 @@ public class SecurityController(ISecurityService securityService) : ControllerBa
     [HttpGet]
     [Route("me")]
     [AuthorizationFilter(Roles.AuthorizeUser)]
-    [ProducesResponseType(typeof(ResponseModel<AuthResponse?>), 200)]
+    [ProducesResponseType(typeof(ResponseModel<UserDataResponse?>), 200)]
     [Produces("application/json")]
     public async Task<IActionResult> GetUserDataAsync([FromHeader] string token)
     {
